@@ -23,18 +23,22 @@ const comingSoonFilms: ComingSoonFilm[] = [
   {
     title: "King Creole",
     posterUrl: "https://vickerstheatre.com/wp-content/uploads/2026/03/pp-resize-kingcreole-c-533x800.jpg",
+    infoUrl: "https://vickerstheatre.com/film/king-creole/",
   },
   {
     title: "The Godfather Part II",
     posterUrl: "https://m.media-amazon.com/images/M/MV5BMDIxMzBlZDktZjMxNy00ZGI4LTgxNDEtYWRlNzRjMjJmOGQ1XkEyXkFqcGc@._V1_SX300.jpg",
+    infoUrl: "https://vickerstheatre.com/event/?title=The%20Godfather%20Part%20II",
   },
   {
     title: "Little Shop of Horrors",
     posterUrl: "https://vickerstheatre.com/wp-content/uploads/2026/02/MV5BNTJjM2VhMDctMTIxYi00MzY3LWI5ZDgtZjFiNzg0M2QxNzI5XkEyXkFqcGc@._V1_SX300.jpg",
+    infoUrl: "https://vickerstheatre.com/film/little-shop-of-horrors/",
   },
   {
     title: "Michael",
     posterUrl: "https://vickerstheatre.com/wp-content/uploads/2026/03/MAVEN_2025x3000_KA_V2-scaled.jpg",
+    infoUrl: "https://vickerstheatre.com/event/?title=Michael",
   },
 ];
 
