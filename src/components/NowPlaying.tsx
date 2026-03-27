@@ -66,7 +66,7 @@ const NowPlaying = () => {
             Now Playing
           </h1>
           <p className="text-muted-foreground font-body text-sm tracking-widest uppercase">
-            This Week at the Vickers · Click a showtime to buy tickets
+            THIS WEEK AT THE VICKERS
           </p>
           <div className="mt-4 mx-auto w-24 h-px bg-primary/40" />
         </div>
