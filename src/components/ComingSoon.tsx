@@ -57,9 +57,12 @@ const ComingSoon = () => {
         {/* Gallery grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
           {comingSoonFilms.map((film, i) => (
-            <div
+            <a
               key={film.title}
-              className="group relative overflow-hidden rounded-lg opacity-0 animate-fade-in"
+              href={film.infoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-lg opacity-0 animate-fade-in block"
               style={{ animationDelay: `${i * 100}ms` }}
             >
               <img
@@ -70,7 +73,7 @@ const ComingSoon = () => {
               />
               {/* Title overlay */}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent p-3 pt-10">
-                <h3 className="font-heading text-sm md:text-base font-semibold text-foreground leading-tight">
+                <h3 className="font-heading text-sm md:text-base font-semibold text-foreground leading-tight group-hover:text-primary transition-colors">
                   {film.title}
                 </h3>
               </div>
