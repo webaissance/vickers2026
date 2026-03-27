@@ -1,16 +1,24 @@
 interface ComingSoonFilm {
   title: string;
   posterUrl: string;
+  infoUrl: string;
 }
 
 const comingSoonFilms: ComingSoonFilm[] = [
   {
+    title: "Calle Málaga",
+    posterUrl: "https://m.media-amazon.com/images/M/MV5BNTNmZjdlYmQtZDU5Zi00OWJhLThlNWUtMzZiMTkyMjI5NWUwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    infoUrl: "https://vickerstheatre.com/event/?title=Calle%20M%C3%A1laga",
+  },
+  {
     title: "Saturday Night Fever",
     posterUrl: "https://vickerstheatre.com/wp-content/uploads/2026/03/snf-bluray-800x1200-c.jpg",
+    infoUrl: "https://vickerstheatre.com/event/?title=Saturday%20Night%20Fever",
   },
   {
     title: "Project Hail Mary",
     posterUrl: "https://vickerstheatre.com/wp-content/uploads/2026/03/phm-scaled.jpg",
+    infoUrl: "https://vickerstheatre.com/event/?title=Project%20Hail%20Mary",
   },
   {
     title: "King Creole",
