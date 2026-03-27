@@ -76,7 +76,7 @@ const ComingSoon = () => {
                 <h3 className="font-heading text-sm md:text-base font-semibold text-foreground leading-tight group-hover:text-primary transition-colors">
                   {film.title}
                 </h3>
-              </div>
+            </a>
             </div>
           ))}
         </div>

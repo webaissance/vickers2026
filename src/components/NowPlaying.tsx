@@ -54,17 +54,6 @@ const nowPlayingFilms: Film[] = [
     ],
     infoUrl: "https://vickerstheatre.com/event/?title=The%20Godfather",
   },
-  {
-    title: "Calle Málaga",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BNTNmZjdlYmQtZDU5Zi00OWJhLThlNWUtMzZiMTkyMjI5NWUwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-    runtime: "116 min · NR",
-    director: "Maryam Touzani",
-    synopsis: "A 79-year-old Spanish woman living in Tangier faces upheaval when her daughter arrives to sell her apartment, leading her on a journey to reclaim her home and rediscover love.",
-    showtimes: [
-      { label: "Fri, Apr 3 · 7:00 PM", ticketUrl: "https://vickerstheatre.easy-ware-ticketing.com/generaladmission/13JRBd-8QE5yroRilG1NIQ" },
-    ],
-    infoUrl: "https://vickerstheatre.com/event/?title=Calle%20M%C3%A1laga",
-  },
 ];
 
 const NowPlaying = () => {
