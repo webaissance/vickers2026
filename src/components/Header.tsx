@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import vickersLogo from "@/assets/vickers-logo.png";
 
 const navLinks = [
   { label: "Now Playing", href: "#now-playing" },
@@ -17,13 +18,8 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container mx-auto flex items-center justify-between px-4 py-4 md:py-5">
         {/* Logo */}
-        <a href="/" className="flex flex-col items-center gap-0 leading-none">
-          <span className="font-heading text-2xl md:text-3xl font-bold tracking-[0.25em] gold-text-gradient">
-            VICKERS
-          </span>
-          <span className="text-[10px] md:text-xs tracking-[0.35em] uppercase text-muted-foreground font-body">
-            Theatre &amp; Cinema
-          </span>
+        <a href="/" className="flex items-center">
+          <img src={vickersLogo} alt="Vickers Theatre" className="h-10 md:h-14 w-auto" />
         </a>
 
         {/* Desktop nav */}
