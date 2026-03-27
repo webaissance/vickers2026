@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import vickersLogo from "@/assets/vickers-logo.png";
 
 const navLinks = [
   { label: "Now Playing", href: "#now-playing" },
