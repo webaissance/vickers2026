@@ -28,7 +28,7 @@ const Header = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors duration-200 uppercase"
+              className="text-base font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors duration-200 uppercase"
             >
               {link.label}
             </a>
@@ -37,7 +37,7 @@ const Header = () => {
 
         {/* Centered Logo */}
         <a href="/" className="flex items-center justify-center">
-          <img src={vickersLogo} alt="Vickers Theatre" className="h-10 md:h-14 w-auto" />
+          <img src={vickersLogo} alt="Vickers Theatre" className="h-14 md:h-20 w-auto" />
         </a>
 
         {/* Right nav */}
@@ -46,7 +46,7 @@ const Header = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors duration-200 uppercase"
+              className="text-base font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors duration-200 uppercase"
             >
               {link.label}
             </a>
@@ -70,7 +70,7 @@ const Header = () => {
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-3 text-sm font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors uppercase border-b border-border/50 last:border-0"
+              className="block py-3 text-base font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors uppercase border-b border-border/50 last:border-0"
             >
               {link.label}
             </a>
