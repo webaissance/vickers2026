@@ -65,7 +65,7 @@ const Header = () => {
       {/* Mobile nav */}
       {mobileOpen && (
         <nav className="lg:hidden border-t border-border bg-background px-4 pb-6 pt-2">
-          {navLinks.map((link) => (
+          {allLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
