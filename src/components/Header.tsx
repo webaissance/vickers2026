@@ -70,7 +70,7 @@ const Header = () => {
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-3 text-sm font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors uppercase border-b border-border/50 last:border-0"
+              className="block py-3 text-base font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors uppercase border-b border-border/50 last:border-0"
             >
               {link.label}
             </a>
