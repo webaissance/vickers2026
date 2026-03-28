@@ -2,14 +2,19 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import vickersLogo from "@/assets/vickers-logo.png";
 
-const navLinks = [
+const leftLinks = [
   { label: "Now Playing", href: "#now-playing" },
   { label: "Coming Soon", href: "#coming-soon" },
   { label: "Become a Member", href: "https://vickerstheatre.com/become-a-member/" },
+];
+
+const rightLinks = [
   { label: "Sponsor a Seat", href: "https://vickerstheatre.com/sponsor-a-seat/" },
-  { label: "About Us", href: "https://vickerstheatre.com/about/" },
+  { label: "About", href: "https://vickerstheatre.com/about/" },
   { label: "Gift Cards", href: "https://easy-ware-forms.com/vickerstheatre/giftcard" },
 ];
+
+const allLinks = [...leftLinks, ...rightLinks];
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,14 +22,9 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container mx-auto flex items-center justify-between px-4 py-4 md:py-5">
-        {/* Logo */}
-        <a href="/" className="flex items-center">
-          <img src={vickersLogo} alt="Vickers Theatre" className="h-10 md:h-14 w-auto" />
-        </a>
-
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
+        {/* Left nav */}
+        <nav className="hidden lg:flex items-center gap-6 flex-1">
+          {leftLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
@@ -35,6 +35,23 @@ const Header = () => {
           ))}
         </nav>
 
+        {/* Centered Logo */}
+        <a href="/" className="flex items-center justify-center">
+          <img src={vickersLogo} alt="Vickers Theatre" className="h-10 md:h-14 w-auto" />
+        </a>
+
+        {/* Right nav */}
+        <nav className="hidden lg:flex items-center justify-end gap-6 flex-1">
+          {rightLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="text-sm font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors duration-200 uppercase"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -48,7 +65,7 @@ const Header = () => {
       {/* Mobile nav */}
       {mobileOpen && (
         <nav className="lg:hidden border-t border-border bg-background px-4 pb-6 pt-2">
-          {navLinks.map((link) => (
+          {allLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
