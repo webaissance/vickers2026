@@ -71,8 +71,9 @@ function parseEvent(el: Element): FilmEvent {
 }
 
 export async function fetchFilmFeed(): Promise<FilmEvent[]> {
-  const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(FEED_URL)}`;
-  const res = await fetch(proxyUrl);
+  // Use Vite proxy in dev, direct URL otherwise
+  const url = "/api/feed";
+  const res = await fetch(url);
   if (!res.ok) throw new Error(`Feed fetch failed: ${res.status}`);
   const xml = await res.text();
   const parser = new DOMParser();
