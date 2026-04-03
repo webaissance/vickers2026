@@ -11,6 +11,13 @@ export default defineConfig(({ mode }) => ({
     hmr: {
       overlay: false,
     },
+    proxy: {
+      "/api/feed": {
+        target: "https://easyware.webaissance.com",
+        changeOrigin: true,
+        rewrite: (path) => "/feeds/Vickers/parsefeed.php?key=7j*pQn)l36",
+      },
+    },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
