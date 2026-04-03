@@ -23,7 +23,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container mx-auto flex items-center justify-between px-4 py-4 md:py-5">
         {/* Left nav */}
-        <nav className="hidden lg:flex items-center gap-6 flex-1">
+        <nav className="hidden lg:flex items-center gap-6 flex-1 justify-end">
           {leftLinks.map((link) => (
             <a
               key={link.label}
