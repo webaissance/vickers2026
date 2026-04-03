@@ -71,7 +71,8 @@ function parseEvent(el: Element): FilmEvent {
 }
 
 export async function fetchFilmFeed(): Promise<FilmEvent[]> {
-  const res = await fetch(FEED_URL);
+  const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(FEED_URL)}`;
+  const res = await fetch(proxyUrl);
   if (!res.ok) throw new Error(`Feed fetch failed: ${res.status}`);
   const xml = await res.text();
   const parser = new DOMParser();
