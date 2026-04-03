@@ -21,9 +21,14 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="container mx-auto flex items-center px-4 py-4 md:py-5">
+      <div className="container mx-auto relative flex items-center px-4 py-4 md:py-5">
+        {/* Centered Logo (absolute for true centering) */}
+        <a href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
+          <img src={vickersLogo} alt="Vickers Theatre" className="h-14 md:h-20 w-auto" />
+        </a>
+
         {/* Left nav */}
-        <nav className="hidden lg:flex items-center gap-6 flex-1 justify-end pr-8">
+        <nav className="hidden lg:flex items-center gap-6 flex-1">
           {leftLinks.map((link) => (
             <a
               key={link.label}
@@ -35,13 +40,8 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Centered Logo */}
-        <a href="/" className="flex-shrink-0 flex items-center justify-center px-4">
-          <img src={vickersLogo} alt="Vickers Theatre" className="h-14 md:h-20 w-auto max-w-[200px] md:max-w-[280px] object-contain" />
-        </a>
-
         {/* Right nav */}
-        <nav className="hidden lg:flex items-center gap-6 flex-1 pl-8">
+        <nav className="hidden lg:flex items-center justify-end gap-6 flex-1">
           {rightLinks.map((link) => (
             <a
               key={link.label}
@@ -52,10 +52,11 @@ const Header = () => {
             </a>
           ))}
         </nav>
+
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-foreground p-2"
+          className="lg:hidden text-foreground p-2 ml-auto"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
