@@ -36,8 +36,8 @@ const Header = () => {
         </nav>
 
         {/* Centered Logo */}
-        <a href="/" className="flex items-center justify-center">
-          <img src={vickersLogo} alt="Vickers Theatre" className="h-14 md:h-20 w-auto" />
+        <a href="/" className="flex-shrink-0 flex items-center justify-center px-4">
+          <img src={vickersLogo} alt="Vickers Theatre" className="h-14 md:h-20 w-auto max-w-[200px] md:max-w-[280px] object-contain" />
         </a>
 
         {/* Right nav */}
