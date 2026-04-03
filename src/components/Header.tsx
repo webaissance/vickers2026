@@ -41,7 +41,7 @@ const Header = () => {
         </nav>
 
         {/* Right nav */}
-        <nav className="hidden lg:flex items-center justify-end gap-6 flex-1">
+        <nav className="hidden lg:flex items-center justify-end gap-6 flex-1 pl-[200px]">
           {rightLinks.map((link) => (
             <a
               key={link.label}
