@@ -1,6 +1,7 @@
 import { useNowPlaying } from "@/hooks/useFilmFeed";
 import { formatScreeningLabel, type FilmEvent } from "@/lib/filmFeed";
 import { getCurrentFilmWeek } from "@/lib/filmFeed";
+import nowPlayingBanner from "@/assets/now-playing-banner.jpg";
 
 const NowPlaying = () => {
   const { data: films, isLoading, error } = useNowPlaying();
@@ -20,15 +21,23 @@ const NowPlaying = () => {
   return (
     <section id="now-playing" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
-        {/* Section header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold gold-text-gradient mb-3">
-            Now Playing
-          </h1>
-          <p className="text-muted-foreground font-body text-sm tracking-widest uppercase">
-            THIS WEEK AT THE VICKERS
-          </p>
-          <div className="mt-4 mx-auto w-24 h-px bg-primary/40" />
+        {/* Hero banner */}
+        <div className="relative w-full max-w-4xl mx-auto mb-12 md:mb-16 overflow-hidden rounded-lg">
+          <img
+            src={nowPlayingBanner}
+            alt="Now Playing at the Vickers Theatre"
+            className="w-full h-auto"
+            width={1920}
+            height={512}
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold gold-text-gradient mb-2">
+              Now Playing
+            </h1>
+            <p className="text-muted-foreground font-body text-sm tracking-widest uppercase">
+              THIS WEEK AT THE VICKERS
+            </p>
+          </div>
         </div>
 
         {isLoading && (
