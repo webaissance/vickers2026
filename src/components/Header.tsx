@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Film, Calendar, CreditCard, Armchair, Star, Gift } from "lucide-react";
 import vickersLogo from "@/assets/vickers-logo.png";
 
 const leftLinks = [
-  { label: "Now Playing", href: "#now-playing" },
-  { label: "Coming Soon", href: "#coming-soon" },
-  { label: "Become a Member", href: "https://vickerstheatre.com/become-a-member/" },
+  { label: "Now Playing", href: "#now-playing", icon: Film },
+  { label: "Coming Soon", href: "#coming-soon", icon: Calendar },
+  { label: "Become a Member", href: "https://vickerstheatre.com/become-a-member/", icon: CreditCard },
 ];
 
 const rightLinks = [
-  { label: "Sponsor a Seat", href: "https://vickerstheatre.com/sponsor-a-seat/" },
-  { label: "About", href: "https://vickerstheatre.com/about/" },
-  { label: "Gift Cards", href: "https://easy-ware-forms.com/vickerstheatre/giftcard" },
+  { label: "Sponsor a Seat", href: "https://vickerstheatre.com/sponsor-a-seat/", icon: Armchair },
+  { label: "About", href: "https://vickerstheatre.com/about/", icon: Star },
+  { label: "Gift Cards", href: "https://easy-ware-forms.com/vickerstheatre/giftcard", icon: Gift },
 ];
 
 const allLinks = [...leftLinks, ...rightLinks];
@@ -25,16 +25,20 @@ const Header = () => {
         {/* Desktop: 3-column grid for perfect centering */}
         <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center gap-4">
           {/* Left nav */}
-          <nav className="flex items-center justify-end gap-6">
-            {leftLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-base font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors duration-200 uppercase whitespace-nowrap"
-              >
-                {link.label}
-              </a>
-            ))}
+          <nav className="flex items-end justify-end gap-6">
+            {leftLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="group flex flex-col items-center gap-1.5 text-base font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors duration-200 uppercase whitespace-nowrap"
+                >
+                  <Icon size={20} className="text-primary group-hover:text-primary transition-colors" strokeWidth={1.75} />
+                  <span>{link.label}</span>
+                </a>
+              );
+            })}
           </nav>
 
           {/* Centered Logo */}
@@ -43,16 +47,20 @@ const Header = () => {
           </a>
 
           {/* Right nav */}
-          <nav className="flex items-center gap-6">
-            {rightLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-base font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors duration-200 uppercase whitespace-nowrap"
-              >
-                {link.label}
-              </a>
-            ))}
+          <nav className="flex items-end gap-6">
+            {rightLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="group flex flex-col items-center gap-1.5 text-base font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors duration-200 uppercase whitespace-nowrap"
+                >
+                  <Icon size={20} className="text-primary group-hover:text-primary transition-colors" strokeWidth={1.75} />
+                  <span>{link.label}</span>
+                </a>
+              );
+            })}
           </nav>
         </div>
 
@@ -74,16 +82,20 @@ const Header = () => {
       {/* Mobile nav */}
       {mobileOpen && (
         <nav className="lg:hidden border-t border-border bg-background px-4 pb-6 pt-2">
-          {allLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="block py-3 text-base font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors uppercase border-b border-border/50 last:border-0"
-            >
-              {link.label}
-            </a>
-          ))}
+          {allLinks.map((link) => {
+            const Icon = link.icon;
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-3 py-3 text-base font-body font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors uppercase border-b border-border/50 last:border-0"
+              >
+                <Icon size={18} className="text-primary" strokeWidth={1.75} />
+                <span>{link.label}</span>
+              </a>
+            );
+          })}
         </nav>
       )}
     </header>
