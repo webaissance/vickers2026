@@ -70,12 +70,31 @@ function parseEvent(el: Element): FilmEvent {
   };
 }
 
-export async function fetchFilmFeed(): Promise<FilmEvent[]> {
-  // Use Vite proxy in dev, direct URL otherwise
-  const url = "/api/feed";
-  const res = await fetch(url);
+async function fetchXml(): Promise<string> {
+  // In local dev, the Vite proxy at /api/feed returns the XML directly.
+  // In production (deployed preview / published site) there is no proxy,
+  // and the upstream feed has no CORS headers, so we fall back to a
+  // public CORS proxy.
+  const isLocalDev =
+    typeof window !== "undefined" &&
+    /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
+
+  if (isLocalDev) {
+    const res = await fetch("/api/feed");
+    if (res.ok) {
+      const text = await res.text();
+      if (text.trim().startsWith("<")) return text;
+    }
+  }
+
+  const target = encodeURIComponent(FEED_URL);
+  const res = await fetch(`https://api.allorigins.win/raw?url=${target}`);
   if (!res.ok) throw new Error(`Feed fetch failed: ${res.status}`);
-  const xml = await res.text();
+  return res.text();
+}
+
+export async function fetchFilmFeed(): Promise<FilmEvent[]> {
+  const xml = await fetchXml();
   const parser = new DOMParser();
   const doc = parser.parseFromString(xml, "text/xml");
   const events = doc.querySelectorAll("event");
