@@ -6,17 +6,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-border bg-background py-10">
       <div className="container mx-auto px-4 text-center">
-        <p className="font-heading text-lg gold-text-gradient font-semibold tracking-wider mb-2">
-          VICKERS THEATRE
-        </p>
-        <p className="text-muted-foreground font-body text-sm mb-1">
-          6 N. Elm Street · Three Oaks, Michigan 49128
-        </p>
-        <p className="text-muted-foreground font-body text-xs tracking-wide mb-8">
-          A Century of Fine Cinema
-        </p>
-
-        <div className="max-w-md mx-auto border-t border-border/50 pt-8">
+        <div className="max-w-md mx-auto pb-8 mb-8 border-b border-border/50">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Mail size={18} className="text-primary" strokeWidth={1.75} />
             <h2 className="font-heading text-base gold-text-gradient font-semibold tracking-wider uppercase">
