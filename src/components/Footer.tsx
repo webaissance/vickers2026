@@ -49,6 +49,16 @@ const Footer = () => {
             By submitting, you agree to receive emails from Vickers Theatre. You may unsubscribe at any time.
           </p>
         </div>
+
+        <p className="font-heading text-lg gold-text-gradient font-semibold tracking-wider mb-2">
+          VICKERS THEATRE
+        </p>
+        <p className="text-muted-foreground font-body text-sm mb-1">
+          6 N. Elm Street · Three Oaks, Michigan 49128
+        </p>
+        <p className="text-muted-foreground font-body text-xs tracking-wide">
+          A Century of Fine Cinema
+        </p>
       </div>
     </footer>
   );
