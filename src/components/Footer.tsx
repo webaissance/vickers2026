@@ -91,6 +91,28 @@ const Footer = () => {
             <p className="text-muted-foreground/70 font-body text-[10px] mt-3">
               By submitting, you agree to receive emails from Vickers Theatre. You may unsubscribe at any time.
             </p>
+
+            {/* Social Media */}
+            <div className="mt-5 flex items-center justify-center gap-5">
+              <a
+                href="https://www.facebook.com/TheVickersTheatre"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Vickers Theatre on Facebook"
+                className="text-primary hover:text-primary/80 transition-colors"
+              >
+                <FacebookIcon className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.instagram.com/vickerstheatrethreeoaks/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Vickers Theatre on Instagram"
+                className="text-primary hover:text-primary/80 transition-colors"
+              >
+                <InstagramIcon className="w-6 h-6" />
+              </a>
+            </div>
           </div>
 
           {/* Right: Navigation */}
