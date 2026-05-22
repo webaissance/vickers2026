@@ -1,5 +1,5 @@
 import { useNowPlaying } from "@/hooks/useFilmFeed";
-import { formatScreeningLabel, type FilmEvent } from "@/lib/filmFeed";
+import { formatScreeningLabel, formatRuntime, type FilmEvent } from "@/lib/filmFeed";
 import { getCurrentFilmWeek } from "@/lib/filmFeed";
 import nowPlayingBanner from "@/assets/now-playing.png";
 
@@ -96,7 +96,7 @@ function FilmCard({ film, index }: { film: FilmEvent; index: number }) {
           {film.title}
         </h2>
         <p className="text-primary font-body text-sm tracking-wide mb-4">
-          {film.runtime} min · {film.rating}
+          {formatRuntime(film.runtime)} · {film.rating}
           {film.director && <> &nbsp;·&nbsp; {film.director}, director</>}
         </p>
         <p className="text-foreground/70 font-body leading-relaxed mb-6 max-w-xl">
