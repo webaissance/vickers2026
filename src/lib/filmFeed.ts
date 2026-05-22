@@ -71,26 +71,21 @@ function parseEvent(el: Element): FilmEvent {
 }
 
 async function fetchXml(): Promise<string> {
-  // In local dev, the Vite proxy at /api/feed returns the XML directly.
-  // In production (deployed preview / published site) there is no proxy,
-  // and the upstream feed has no CORS headers, so we fall back to a
-  // public CORS proxy.
-  const isLocalDev =
-    typeof window !== "undefined" &&
-    /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
-
-  if (isLocalDev) {
-    const res = await fetch("/api/feed");
-    if (res.ok) {
-      const text = await res.text();
-      if (text.trim().startsWith("<")) return text;
-    }
-  }
-
-  const target = encodeURIComponent(FEED_URL);
-  const res = await fetch(`https://api.allorigins.win/raw?url=${target}`);
+  const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID;
+  const anonKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+  const url = `https://${projectId}.supabase.co/functions/v1/film-feed`;
+  const res = await fetch(url, {
+    headers: {
+      apikey: anonKey,
+      Authorization: `Bearer ${anonKey}`,
+    },
+  });
   if (!res.ok) throw new Error(`Feed fetch failed: ${res.status}`);
-  return res.text();
+  const text = await res.text();
+  if (!text.trim().startsWith("<")) {
+    throw new Error("Unexpected feed response");
+  }
+  return text;
 }
 
 export async function fetchFilmFeed(): Promise<FilmEvent[]> {
