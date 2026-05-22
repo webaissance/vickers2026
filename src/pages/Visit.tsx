@@ -124,6 +124,9 @@ const Visit = () => {
               <li>
                 We recommend you arrive 20–30 minutes ahead of the start time for
                 popular movies, special events, and especially holiday weekends.
+                We show very few trailers, and films begin promptly. Please arrive
+                before the listed showtime to allow time for concessions and seating
+                before the lights go down. All showtimes are listed in Eastern Time.
               </li>
               <li>
                 <strong>NO OUTSIDE FOOD OR BEVERAGE.</strong> We ask that you
