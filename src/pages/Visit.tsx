@@ -72,8 +72,8 @@ const Visit = () => {
 
           <Section title="Hours">
             <p>
-              Our box office and café open shortly before each screening. Hours
-              follow the week's showtimes — check{" "}
+              Our box office opens 45 minutes prior to the first screening of the day.
+              Hours follow the week's showtimes — check{" "}
               <a href="/#now-playing" className="text-primary hover:underline">
                 Now Playing
               </a>{" "}
@@ -82,11 +82,27 @@ const Visit = () => {
           </Section>
 
           <Section title="Tickets & Pricing">
-            <p>
-              Tickets are available online through each showtime link, or in
-              person at the box office. Member and matinee pricing available —
-              please call <a href="tel:+12697563522" className="text-primary hover:underline">269-756-3522</a> or
-              email us for current rates.
+            <div className="space-y-2">
+              <div className="flex justify-between max-w-sm">
+                <span>Adults</span>
+                <span className="font-semibold">$12.00</span>
+              </div>
+              <div className="flex justify-between max-w-sm">
+                <span>Students with ID</span>
+                <span className="font-semibold">$10.00</span>
+              </div>
+              <div className="flex justify-between max-w-sm">
+                <span>Seniors 60+</span>
+                <span className="font-semibold">$10.00</span>
+              </div>
+              <div className="flex justify-between max-w-sm">
+                <span>100+ years old</span>
+                <span className="font-semibold">FREE</span>
+              </div>
+            </div>
+            <p className="mt-4">
+              Annual Members receive complimentary admission to all regularly
+              priced film screenings.
             </p>
             <p>
               Interested in becoming a member?{" "}
@@ -98,16 +114,41 @@ const Visit = () => {
               >
                 Become a Member
               </a>{" "}
-              to enjoy discounted admission and support independent cinema in
+              to enjoy complimentary admission and support independent cinema in
               Harbor Country.
+            </p>
+          </Section>
+
+          <Section title="Policies">
+            <ul className="list-disc pl-5 space-y-3">
+              <li>
+                We recommend you arrive 20–30 minutes ahead of the start time for
+                popular movies, special events, and especially holiday weekends.
+              </li>
+              <li>
+                <strong>NO OUTSIDE FOOD OR BEVERAGE.</strong> We ask that you
+                refrain from bringing in outside food or beverage. The success of
+                our concession stand is crucial to the continuation of the
+                theatre.
+              </li>
+              <li>
+                We also ask you to turn your cell phones off when the lights are
+                dim, as a consideration to others. <strong>NO TEXTING IS
+                ALLOWED DURING THE FILM.</strong>
+              </li>
+              <li>
+                Film schedule subject to change without notice.
+              </li>
+            </ul>
+            <p className="italic text-foreground/60 mt-4">
+              The Vickers Theatre thanks you for your cooperation.
             </p>
           </Section>
 
           <Section title="Concessions">
             <p>
-              Enjoy a true vintage movie experience — real-butter popcorn,
-              old-fashioned candies, espresso, and a curated selection of beer
-              and wine, served from our café.
+              Popcorn served with real butter, a wide selection of candies and
+              soda, teas, coffee, and water as well as beer and wine.
             </p>
           </Section>
 
