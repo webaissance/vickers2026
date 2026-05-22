@@ -22,7 +22,7 @@ const NowPlaying = () => {
     <section id="now-playing" className="pt-4 pb-16 md:pt-6 md:pb-24">
       <div className="container mx-auto px-4">
         {/* Section header */}
-        <div className="mb-12 md:mb-16">
+        <div className="mb-8 md:mb-10">
           <h1 className="sr-only">Now Playing — This Week at the Vickers</h1>
           <img
             src={nowPlayingBanner}
