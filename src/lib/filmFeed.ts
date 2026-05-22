@@ -189,3 +189,7 @@ export function getComingSoonDateLabel(film: FilmEvent): string {
   }
   return `Opens ${dateStr}`;
 }
+
+export function findFilmBySlug(films: FilmEvent[], slug: string): FilmEvent | undefined {
+  return films.find((f) => slugify(f.title) === slug);
+}
