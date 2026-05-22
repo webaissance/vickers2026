@@ -1,16 +1,18 @@
 import { useState } from "react";
-import { Menu, X, Film, Calendar, CreditCard, Armchair, Star, Gift } from "lucide-react";
+import { Menu, X, Film, Calendar, CreditCard, Armchair, Star, Gift, Building, Monitor } from "lucide-react";
 import vickersLogo from "@/assets/vickers-logo.png";
 
 const leftLinks = [
   { label: "Now Playing", href: "#now-playing", icon: Film },
   { label: "Coming Soon", href: "#coming-soon", icon: Calendar },
-  { label: "Become a Member", href: "https://easy-ware-forms.com/vickerstheatre/membership", icon: CreditCard },
+  { label: "About", href: "/about", icon: Star },
+  { label: "Rentals", href: "/rentals", icon: Building },
 ];
 
 const rightLinks = [
+  { label: "On-Screen Advertising", href: "/on-screen-advertising", icon: Monitor },
+  { label: "Become a Member", href: "https://easy-ware-forms.com/vickerstheatre/membership", icon: CreditCard },
   { label: "Sponsor a Seat", href: "https://easy-ware-forms.com/vickerstheatre/seatsponsor", icon: Armchair },
-  { label: "About", href: "https://vickerstheatre.com/about/", icon: Star },
   { label: "Gift Cards", href: "https://easy-ware-forms.com/vickerstheatre/giftcard", icon: Gift },
 ];
 
