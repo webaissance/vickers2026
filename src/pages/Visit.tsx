@@ -30,9 +30,7 @@ const Visit = () => {
           </h1>
           <div className="h-px w-24 mx-auto bg-primary/50 mb-8" />
           <p className="font-body text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
-            A historic, independent cinema in the heart of Three Oaks, Michigan —
-            screening independent, documentary, foreign, and classic films since
-            1996.
+            A historic, independent cinema in the heart of Three Oaks, Michigan
           </p>
 
           <Section title="Location & Contact">
