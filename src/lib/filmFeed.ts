@@ -7,6 +7,14 @@ export function formatRuntime(minutes: number): string {
   return `${h}h ${m}m`;
 }
 
+export function slugify(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[''`’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 const FEED_URL =
   "https://easyware.webaissance.com/feeds/Vickers/parsefeed.php?key=7j*pQn)l36";
 
@@ -180,4 +188,8 @@ export function getComingSoonDateLabel(film: FilmEvent): string {
     return `One Night Only · ${dateStr}`;
   }
   return `Opens ${dateStr}`;
+}
+
+export function findFilmBySlug(films: FilmEvent[], slug: string): FilmEvent | undefined {
+  return films.find((f) => slugify(f.title) === slug);
 }

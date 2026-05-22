@@ -7,6 +7,8 @@ import Index from "./pages/Index.tsx";
 import About from "./pages/About.tsx";
 import Rentals from "./pages/Rentals.tsx";
 import OnScreenAdvertising from "./pages/OnScreenAdvertising.tsx";
+import Visit from "./pages/Visit.tsx";
+import FilmDetail from "./pages/FilmDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/rentals" element={<Rentals />} />
           <Route path="/on-screen-advertising" element={<OnScreenAdvertising />} />
+          <Route path="/visit" element={<Visit />} />
+          <Route path="/film/:slug" element={<FilmDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
