@@ -5,8 +5,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container mx-auto px-4 py-16">
-        <div className="max-w-3xl mx-auto text-center">
+      <main className="container mx-auto px-4 py-16 text-center">
+        <div className="max-w-3xl mx-auto">
           <h1 className="font-heading text-4xl md:text-5xl gold-text-gradient font-semibold tracking-wider mb-6">
             About Vickers Theatre
           </h1>
