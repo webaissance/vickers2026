@@ -1,6 +1,7 @@
 import { useNowPlaying } from "@/hooks/useFilmFeed";
 import { formatScreeningLabel, type FilmEvent } from "@/lib/filmFeed";
 import { getCurrentFilmWeek } from "@/lib/filmFeed";
+import nowPlayingBanner from "@/assets/now-playing.png";
 
 const NowPlaying = () => {
   const { data: films, isLoading, error } = useNowPlaying();
@@ -21,15 +22,15 @@ const NowPlaying = () => {
     <section id="now-playing" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         {/* Section header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold gold-text-gradient mb-3">
-            Now Playing
-          </h1>
-          <p className="text-muted-foreground font-body text-sm tracking-widest uppercase">
-            THIS WEEK AT THE VICKERS
-          </p>
-          <div className="mt-4 mx-auto w-24 h-px bg-primary/40" />
+        <div className="mb-12 md:mb-16">
+          <h1 className="sr-only">Now Playing — This Week at the Vickers</h1>
+          <img
+            src={nowPlayingBanner}
+            alt="Now Playing — This Week at the Vickers"
+            className="w-full max-w-4xl mx-auto h-auto"
+          />
         </div>
+
 
         {isLoading && (
           <div className="text-center text-muted-foreground font-body py-12">
