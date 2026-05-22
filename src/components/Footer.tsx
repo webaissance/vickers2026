@@ -1,4 +1,4 @@
-import { Mail, Film, Calendar, CreditCard, Armchair, Star, Gift, Building, Monitor } from "lucide-react";
+import { Mail, Film, Calendar, CreditCard, Armchair, Star, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -18,8 +18,6 @@ const navLinks = [
   { label: "Now Playing", href: "#now-playing", icon: Film },
   { label: "Coming Soon", href: "#coming-soon", icon: Calendar },
   { label: "About", href: "/about", icon: Star },
-  { label: "Rentals", href: "/rentals", icon: Building },
-  { label: "On-Screen Advertising", href: "/on-screen-advertising", icon: Monitor },
   { label: "Become a Member", href: "https://easy-ware-forms.com/vickerstheatre/membership", icon: CreditCard },
   { label: "Sponsor a Seat", href: "https://easy-ware-forms.com/vickerstheatre/seatsponsor", icon: Armchair },
   { label: "Gift Cards", href: "https://easy-ware-forms.com/vickerstheatre/giftcard", icon: Gift },
@@ -46,6 +44,15 @@ const Footer = () => {
             <p>
               <a href="mailto:info@vickerstheatre.com" className="text-primary hover:underline">
                 info@vickerstheatre.com
+              </a>
+            </p>
+            <p className="pt-2 space-x-3">
+              <a href="/rentals" className="text-primary hover:underline font-medium uppercase tracking-wide text-xs">
+                Rentals
+              </a>
+              <span className="text-muted-foreground/40">|</span>
+              <a href="/on-screen-advertising" className="text-primary hover:underline font-medium uppercase tracking-wide text-xs">
+                On-Screen Advertising
               </a>
             </p>
           </div>
