@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Menu, X, Film, Calendar, CreditCard, Armchair, Star, Gift, ChevronDown } from "lucide-react";
+import { Menu, X, Film, Calendar, CreditCard, Armchair, Star, Gift, ChevronDown, MapPin } from "lucide-react";
 import vickersLogo from "@/assets/vickers-logo.png";
 
 const leftLinks = [
-  { label: "Now Playing", href: "#now-playing", icon: Film },
-  { label: "Coming Soon", href: "#coming-soon", icon: Calendar },
+  { label: "Now Playing", href: "/#now-playing", icon: Film },
+  { label: "Coming Soon", href: "/#coming-soon", icon: Calendar },
+  { label: "Visit", href: "/visit", icon: MapPin },
 ];
 
 const aboutDropdown = {

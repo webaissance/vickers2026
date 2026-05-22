@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import { useNowPlaying } from "@/hooks/useFilmFeed";
-import { formatScreeningLabel, formatRuntime, type FilmEvent } from "@/lib/filmFeed";
+import { formatScreeningLabel, formatRuntime, slugify, type FilmEvent } from "@/lib/filmFeed";
 import { getCurrentFilmWeek } from "@/lib/filmFeed";
 import nowPlayingBanner from "@/assets/now-playing.png";
 
@@ -71,10 +72,8 @@ function FilmCard({ film, index }: { film: FilmEvent; index: number }) {
       style={{ animationDelay: `${index * 150}ms` }}
     >
       {/* Poster */}
-      <a
-        href={film.movieLink}
-        target="_blank"
-        rel="noopener noreferrer"
+      <Link
+        to={`/film/${slugify(film.title)}`}
         className="group relative overflow-hidden rounded-lg gold-glow mx-auto md:mx-0 max-w-[280px] md:max-w-none"
       >
         <img
@@ -88,13 +87,15 @@ function FilmCard({ film, index }: { film: FilmEvent; index: number }) {
             {tagLabel}
           </span>
         )}
-      </a>
+      </Link>
 
       {/* Details */}
       <div className="flex flex-col justify-center">
-        <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2">
-          {film.title}
-        </h2>
+        <Link to={`/film/${slugify(film.title)}`} className="hover:text-primary transition-colors">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 hover:text-primary transition-colors">
+            {film.title}
+          </h2>
+        </Link>
         <p className="text-primary font-body text-sm tracking-wide mb-4">
           {formatRuntime(film.runtime)} · {film.rating}
           {film.director && <> &nbsp;·&nbsp; {film.director}, director</>}

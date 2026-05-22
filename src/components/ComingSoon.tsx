@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import { useComingSoon } from "@/hooks/useFilmFeed";
-import { getComingSoonDateLabel } from "@/lib/filmFeed";
+import { getComingSoonDateLabel, slugify } from "@/lib/filmFeed";
 import comingSoonBanner from "@/assets/coming-soon.png";
 
 const ComingSoon = () => {
@@ -30,11 +31,9 @@ const ComingSoon = () => {
                   : undefined;
 
             return (
-              <a
+              <Link
                 key={film.eventId}
-                href={film.movieLink}
-                target="_blank"
-                rel="noopener noreferrer"
+                to={`/film/${slugify(film.title)}`}
                 className="group relative overflow-hidden rounded-lg opacity-0 animate-fade-in block"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
@@ -58,7 +57,7 @@ const ComingSoon = () => {
                     {getComingSoonDateLabel(film)}
                   </p>
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>
