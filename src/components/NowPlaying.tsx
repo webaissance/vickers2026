@@ -103,6 +103,17 @@ function FilmCard({ film, index }: { film: FilmEvent; index: number }) {
           {film.synopsis}
         </p>
 
+        {film.trailer && (
+          <a
+            href={film.trailer}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-4 inline-flex items-center gap-2 text-primary/80 hover:text-primary font-body text-xs tracking-widest uppercase transition-colors"
+          >
+            Watch Trailer →
+          </a>
+        )}
+
         {/* Showtimes */}
         <div className="flex flex-wrap gap-2">
           {film.shows.map((s) => (
@@ -117,17 +128,6 @@ function FilmCard({ film, index }: { film: FilmEvent; index: number }) {
             </a>
           ))}
         </div>
-
-        {film.trailer && (
-          <a
-            href={film.trailer}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-2 text-primary/80 hover:text-primary font-body text-xs tracking-widest uppercase transition-colors"
-          >
-            Trailer &amp; Info →
-          </a>
-        )}
       </div>
     </article>
   );
