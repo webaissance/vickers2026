@@ -1,13 +1,26 @@
+## Problem
 
+On the published site, `Unable to load showtimes` appears because the client fetches the XML feed via `https://api.allorigins.win` (public CORS proxy), which is currently returning HTTP 522 (Cloudflare upstream failure). The upstream feed itself (`easyware.webaissance.com`) responds normally with HTTP 200 — the issue is purely the third-party proxy.
 
-## Fix Header Spacing
+In local dev this works because Vite proxies `/api/feed` to the upstream directly; in production there's no equivalent, so the code falls back to allorigins.
 
-The issue is that the left nav uses default alignment (left-aligned within its `flex-1` container) while the right nav uses `justify-end`. This means left links sit close to the left edge and the logo, but right links are pushed to the far right -- creating uneven gaps around the logo.
+## Fix
 
-**Fix**: Change both nav containers to push their links toward the logo, so spacing is symmetrical.
+Enable Lovable Cloud and add a tiny edge function that proxies the XML feed. This removes the dependency on a third-party CORS proxy and works identically in dev and production.
 
-- **Left nav** (line 26): Change from `gap-6 flex-1` to `gap-6 flex-1 justify-end` so links cluster near the logo
-- **Right nav** (line 44): Change from `justify-end gap-6 flex-1` to `gap-6 flex-1` (remove `justify-end`) so links cluster near the logo
+### Steps
 
-This makes both groups of links hug the center logo evenly, with equal whitespace on the outer edges.
+1. Enable Lovable Cloud (provisions backend + edge function support).
+2. Add edge function `film-feed` that:
+   - Fetches the upstream XML from `https://easyware.webaissance.com/feeds/Vickers/parsefeed.php?key=7j*pQn)l36`
+   - Returns it with `Content-Type: text/xml` and proper CORS headers
+   - Returns a structured JSON error on failure
+3. Update `src/lib/filmFeed.ts` `fetchXml()` to call the edge function in production (and keep the existing Vite `/api/feed` path for local dev). Remove the allorigins fallback.
+4. Verify on the published preview that `NowPlaying` and `ComingSoon` load.
 
+### Files touched
+
+- `supabase/functions/film-feed/index.ts` (new edge function)
+- `src/lib/filmFeed.ts` (swap proxy URL)
+
+No UI/visual changes.
