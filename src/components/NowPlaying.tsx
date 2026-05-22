@@ -1,6 +1,7 @@
 import { useNowPlaying } from "@/hooks/useFilmFeed";
 import { formatScreeningLabel, type FilmEvent } from "@/lib/filmFeed";
 import { getCurrentFilmWeek } from "@/lib/filmFeed";
+import nowPlayingBanner from "@/assets/now-playing.png";
 
 const NowPlaying = () => {
   const { data: films, isLoading, error } = useNowPlaying();
