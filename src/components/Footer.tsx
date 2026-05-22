@@ -17,8 +17,8 @@ const InstagramIcon = ({ className }: { className?: string }) => (
 const navLinks = [
   { label: "Now Playing", href: "#now-playing", icon: Film },
   { label: "Coming Soon", href: "#coming-soon", icon: Calendar },
-  { label: "Become a Member", href: "https://vickerstheatre.com/become-a-member/", icon: CreditCard },
-  { label: "Sponsor a Seat", href: "https://vickerstheatre.com/sponsor-a-seat/", icon: Armchair },
+  { label: "Become a Member", href: "https://easy-ware-forms.com/vickerstheatre/membership", icon: CreditCard },
+  { label: "Sponsor a Seat", href: "https://easy-ware-forms.com/vickerstheatre/seatsponsor", icon: Armchair },
   { label: "About", href: "https://vickerstheatre.com/about/", icon: Star },
   { label: "Gift Cards", href: "https://easy-ware-forms.com/vickerstheatre/giftcard", icon: Gift },
 ];

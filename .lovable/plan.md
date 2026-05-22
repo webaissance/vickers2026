@@ -1,11 +1,11 @@
-Update the site's share/preview title from "Vickers Theatre — A Century of Fine Cinema" to "Vickers Theatre — Three Oaks, MI".
+Update three navigation links in both Header.tsx and Footer.tsx to point to the new Easy Ware Forms URLs:
 
-### Changes in `index.html`
-- `<title>` → `Vickers Theatre — Three Oaks, MI`
-- `<meta property="og:title">` → `Vickers Theatre — Three Oaks, MI`
-- `<meta name="twitter:title">` → `Vickers Theatre — Three Oaks, MI`
+1. Become A Member → https://easy-ware-forms.com/vickerstheatre/membership
+2. Sponsor A Seat → https://easy-ware-forms.com/vickerstheatre/seatsponsor
+3. Gift Cards → https://easy-ware-forms.com/vickerstheatre/giftcard (already correct in both files)
 
-Descriptions, images, and other meta tags stay as-is.
+Gift Cards is already pointing to the correct URL in both files, so only Become A Member and Sponsor A Seat need updating in each file.
 
-### Note
-Social platforms (iMessage, Facebook, etc.) cache link previews aggressively. The new title will show on fresh shares, but previously-shared links may keep showing the old title until the platform re-scrapes.
+Files to edit:
+- src/components/Header.tsx (2 href updates)
+- src/components/Footer.tsx (2 href updates)
