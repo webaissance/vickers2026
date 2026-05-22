@@ -1,4 +1,4 @@
-import { Mail, Film, Calendar, CreditCard, Armchair, Star, Gift } from "lucide-react";
+import { Mail, Film, Calendar, CreditCard, Armchair, Star, Gift, Building, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -17,9 +17,11 @@ const InstagramIcon = ({ className }: { className?: string }) => (
 const navLinks = [
   { label: "Now Playing", href: "#now-playing", icon: Film },
   { label: "Coming Soon", href: "#coming-soon", icon: Calendar },
+  { label: "About", href: "/about", icon: Star },
+  { label: "Rentals", href: "/rentals", icon: Building },
+  { label: "On-Screen Advertising", href: "/on-screen-advertising", icon: Monitor },
   { label: "Become a Member", href: "https://easy-ware-forms.com/vickerstheatre/membership", icon: CreditCard },
   { label: "Sponsor a Seat", href: "https://easy-ware-forms.com/vickerstheatre/seatsponsor", icon: Armchair },
-  { label: "About", href: "https://vickerstheatre.com/about/", icon: Star },
   { label: "Gift Cards", href: "https://easy-ware-forms.com/vickerstheatre/giftcard", icon: Gift },
 ];
 
