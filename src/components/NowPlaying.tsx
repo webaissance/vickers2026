@@ -19,7 +19,7 @@ const NowPlaying = () => {
   }));
 
   return (
-    <section id="now-playing" className="py-16 md:py-24">
+    <section id="now-playing" className="pt-4 pb-16 md:pt-6 md:pb-24">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <div className="mb-12 md:mb-16">
