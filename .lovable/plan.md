@@ -1,11 +1,11 @@
-Update three navigation links in both Header.tsx and Footer.tsx to point to the new Easy Ware Forms URLs:
+## Goal
+Replace `src/assets/coming-soon.png` with a new banner that visually matches `src/assets/now-playing.png`: black background, thin gold rectangular frame, large gold serif "COMING SOON" wordmark centered inside. No subtitle.
 
-1. Become A Member → https://easy-ware-forms.com/vickerstheatre/membership
-2. Sponsor A Seat → https://easy-ware-forms.com/vickerstheatre/seatsponsor
-3. Gift Cards → https://easy-ware-forms.com/vickerstheatre/giftcard (already correct in both files)
-
-Gift Cards is already pointing to the correct URL in both files, so only Become A Member and Sponsor A Seat need updating in each file.
-
-Files to edit:
-- src/components/Header.tsx (2 href updates)
-- src/components/Footer.tsx (2 href updates)
+## Steps
+1. Generate a new banner image with `imagegen` (premium tier for crisp typography):
+   - Black background, thin gold double-line rectangular border with small gold corner accents matching the Now Playing banner.
+   - Large gold serif (Playfair Display style) "COMING SOON" centered.
+   - Same aspect ratio and proportions as the existing Now Playing banner (~1536×288, roughly 16:3).
+   - Save to `src/assets/coming-soon.png`, overwriting the current file.
+2. No code changes needed — `ComingSoon.tsx` already imports `src/assets/coming-soon.png`.
+3. Verify by viewing the regenerated image.
