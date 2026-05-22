@@ -1,5 +1,6 @@
 import { useComingSoon } from "@/hooks/useFilmFeed";
 import { getComingSoonDateLabel } from "@/lib/filmFeed";
+import comingSoonBanner from "@/assets/coming-soon.png";
 
 const ComingSoon = () => {
   const { data: films, isLoading } = useComingSoon();
@@ -10,11 +11,12 @@ const ComingSoon = () => {
     <section id="coming-soon" className="py-16 md:py-24 bg-secondary/50">
       <div className="container mx-auto px-4">
         {/* Section header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold gold-text-gradient mb-3">
-            Coming Soon
-          </h2>
-          <div className="mt-4 mx-auto w-24 h-px bg-primary/40" />
+        <div className="mb-12 md:mb-16">
+          <img
+            src={comingSoonBanner}
+            alt="Coming Soon"
+            className="max-w-4xl mx-auto w-full h-auto"
+          />
         </div>
 
         {/* Gallery grid */}
