@@ -56,9 +56,6 @@ const Footer = () => {
         <p className="text-muted-foreground font-body text-sm mb-1">
           6 N. Elm Street · Three Oaks, Michigan 49128
         </p>
-        <p className="text-muted-foreground font-body text-xs tracking-wide">
-          {"\u200B"}
-        </p>
       </div>
     </footer>
   );
