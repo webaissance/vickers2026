@@ -57,7 +57,7 @@ const Footer = () => {
           6 N. Elm Street · Three Oaks, Michigan 49128
         </p>
         <p className="text-muted-foreground font-body text-xs tracking-wide">
-          A Century of Fine Cinema
+          {"\u200B"}
         </p>
       </div>
     </footer>
