@@ -150,8 +150,10 @@ const Visit = () => {
 
           <Section title="Concessions">
             <p>
-              Popcorn served with real butter, a wide selection of candies and
-              soda, teas, coffee, and water as well as beer and wine.
+              Our concessions stand features freshly popped popcorn served with
+              real butter, along with a wide selection of nostalgic movie theatre
+              candy. We also offer coffee, hot tea, hot chocolate, a variety of soft
+              drinks, plus beer and wine.
             </p>
           </Section>
 
