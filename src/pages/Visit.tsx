@@ -124,6 +124,9 @@ const Visit = () => {
               <li>
                 We recommend you arrive 20–30 minutes ahead of the start time for
                 popular movies, special events, and especially holiday weekends.
+                We show very few trailers, and films begin promptly. Please arrive
+                before the listed showtime to allow time for concessions and seating
+                before the lights go down. All showtimes are listed in Eastern Time.
               </li>
               <li>
                 <strong>NO OUTSIDE FOOD OR BEVERAGE.</strong> We ask that you
@@ -147,8 +150,10 @@ const Visit = () => {
 
           <Section title="Concessions">
             <p>
-              Popcorn served with real butter, a wide selection of candies and
-              soda, teas, coffee, and water as well as beer and wine.
+              Our concessions stand features freshly popped popcorn served with
+              real butter, along with a wide selection of nostalgic movie theatre
+              candy. We also offer coffee, hot tea, hot chocolate, a variety of soft
+              drinks, plus beer and wine.
             </p>
           </Section>
 
