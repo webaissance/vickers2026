@@ -5,9 +5,9 @@ const Rentals = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container mx-auto px-4 py-16">
+      <main className="container mx-auto px-4 py-16 text-center">
         <div className="max-w-3xl mx-auto">
-          <h1 className="font-heading text-4xl md:text-5xl gold-text-gradient font-semibold tracking-wider mb-6 text-center">
+          <h1 className="font-heading text-4xl md:text-5xl gold-text-gradient font-semibold tracking-wider mb-6">
             Host Your Event at the Vickers Theatre
           </h1>
           <div className="h-px w-24 mx-auto bg-primary/50 mb-8" />
