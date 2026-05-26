@@ -7,17 +7,21 @@ import nowPlayingBanner from "@/assets/now-playing.png";
 const NowPlaying = () => {
   const { data: films, isLoading, error } = useNowPlaying();
 
-  // Filter screenings to only those in the current film week
-  const { start, end } = getCurrentFilmWeek();
+  // Filter screenings to only those from today through end of current film week
+  const { end } = getCurrentFilmWeek();
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
-  const filmsWithCurrentWeekShows = films.map((film) => ({
-    ...film,
-    shows: film.shows.filter((s) => {
-      const [m, d, y] = s.date.split("/").map(Number);
-      const sd = new Date(y, m - 1, d);
-      return sd >= start && sd <= end;
-    }),
-  }));
+  const filmsWithCurrentWeekShows = films
+    .map((film) => ({
+      ...film,
+      shows: film.shows.filter((s) => {
+        const [m, d, y] = s.date.split("/").map(Number);
+        const sd = new Date(y, m - 1, d);
+        return sd >= today && sd <= end;
+      }),
+    }))
+    .filter((film) => film.shows.length > 0);
 
   return (
     <section id="now-playing" className="pt-4 pb-16 md:pt-6 md:pb-24">
