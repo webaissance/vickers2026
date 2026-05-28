@@ -90,12 +90,15 @@ const OnScreenAdvertising = () => {
             <p>We also accept cash or check if preferred.</p>
 
             <h2 className="font-heading text-2xl gold-text-gradient font-semibold tracking-wider mt-10 mb-4">
-              Artwork Guidelines
+              Artwork specifications
             </h2>
             <ul className="list-disc list-inside space-y-1 ml-2">
-              <li>1280 x 720 pixels</li>
-              <li>.jpg format</li>
-              <li>Submit at least one week prior to your requested start date</li>
+              <li>Preferred resolution: 1920(w) × 1080(h) for best on-screen quality</li>
+              <li>Minimum accepted resolution: 1280(w) × 720(h)</li>
+              <li>16:9 horizontal layout required</li>
+              <li>Accepted formats: .jpg or .png</li>
+              <li>Please avoid placing important text or logos too close to the edges</li>
+              <li>Artwork should be submitted at least one week prior to the requested start date</li>
             </ul>
 
             <h2 className="font-heading text-2xl gold-text-gradient font-semibold tracking-wider mt-10 mb-4">
