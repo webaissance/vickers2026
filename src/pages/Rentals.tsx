@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import RentalInquiryForm from "@/components/RentalInquiryForm";
 
 const Rentals = () => {
   return (
@@ -25,6 +26,13 @@ const Rentals = () => {
               lectures, and community events. A 22-foot screen and immersive
               surround sound create a true cinematic experience.
             </p>
+
+            <h2 className="font-heading text-3xl gold-text-gradient font-semibold tracking-wider mt-12 mb-2 text-center">
+              Private Rental Inquiry Form
+            </h2>
+            <div className="h-px w-16 mx-auto bg-primary/50 mb-6" />
+            <RentalInquiryForm />
+
 
             <h2 className="font-heading text-2xl gold-text-gradient font-semibold tracking-wider mt-10 mb-4">
               Private Rental Rates

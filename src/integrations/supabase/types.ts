@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      rental_inquiries: {
+        Row: {
+          alternate_date: string | null
+          concessions_interest: string | null
+          created_at: string
+          description: string
+          email: string
+          estimated_attendance: string
+          estimated_end_time: string
+          event_type: string
+          event_visibility: string
+          id: string
+          name: string
+          outside_catering: string | null
+          phone: string
+          preferred_date: string
+          preferred_start_time: string
+          showing_media: string
+        }
+        Insert: {
+          alternate_date?: string | null
+          concessions_interest?: string | null
+          created_at?: string
+          description: string
+          email: string
+          estimated_attendance: string
+          estimated_end_time: string
+          event_type: string
+          event_visibility: string
+          id?: string
+          name: string
+          outside_catering?: string | null
+          phone: string
+          preferred_date: string
+          preferred_start_time: string
+          showing_media: string
+        }
+        Update: {
+          alternate_date?: string | null
+          concessions_interest?: string | null
+          created_at?: string
+          description?: string
+          email?: string
+          estimated_attendance?: string
+          estimated_end_time?: string
+          event_type?: string
+          event_visibility?: string
+          id?: string
+          name?: string
+          outside_catering?: string | null
+          phone?: string
+          preferred_date?: string
+          preferred_start_time?: string
+          showing_media?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
