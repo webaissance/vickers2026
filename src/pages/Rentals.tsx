@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import RentalInquiryForm from "@/components/RentalInquiryForm";
 
 const Rentals = () => {
   return (
