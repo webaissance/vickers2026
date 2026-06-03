@@ -21,10 +21,10 @@ const Rentals = () => {
             </p>
 
             <p>
-              Our 108-seat auditorium, along with additional café seating, is ideal
-              for private screenings, corporate gatherings, birthday parties,
-              lectures, and community events. A 22-foot screen and immersive
-              surround sound create a true cinematic experience.
+              Our beautifully restored single-screen theatre features a 22-foot
+              screen, state-of-the-art 4K laser projection, immersive surround
+              sound, and seating for up to 126 guests, creating an experience
+              unlike a traditional event venue.
             </p>
 
             <h2 className="font-heading text-3xl gold-text-gradient font-semibold tracking-wider mt-12 mb-2 text-center">
