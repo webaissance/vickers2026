@@ -436,7 +436,7 @@ const RentalInquiryForm = () => {
             name="outside_catering"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Will you be bringing outside catering?</FormLabel>
+                <FormLabel>Will you be bringing outside catering? (Outside alcohol is not permitted)</FormLabel>
                 <FormControl>
                   <RadioGroup
                     onValueChange={field.onChange}
