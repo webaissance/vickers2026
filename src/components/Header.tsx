@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Menu, X, Film, Calendar, CreditCard, Armchair, Star, Gift, ChevronDown, MapPin } from "lucide-react";
-import vickersLogo from "@/assets/vickers-logo.png";
+import vickersLogoAsset from "@/assets/vickers-logo-2026.png.asset.json";
+
+const vickersLogo = vickersLogoAsset.url;
 
 const leftLinks = [
   { label: "Now Playing", href: "/#now-playing", icon: Film },
@@ -92,7 +94,7 @@ const Header = () => {
 
           {/* Centered Logo */}
           <a href="/" className="flex items-center justify-center px-4">
-            <img src={vickersLogo} alt="Vickers Theatre" className="h-20 w-auto" />
+            <img src={vickersLogo} alt="Vickers Theatre" className="h-16 xl:h-20 w-auto max-w-[420px]" />
           </a>
 
           {/* Right nav */}
@@ -116,7 +118,7 @@ const Header = () => {
         {/* Mobile: logo + hamburger */}
         <div className="flex lg:hidden items-center justify-between">
           <a href="/" className="flex items-center">
-            <img src={vickersLogo} alt="Vickers Theatre" className="h-14 w-auto" />
+            <img src={vickersLogo} alt="Vickers Theatre" className="h-10 w-auto max-w-[220px]" />
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
