@@ -120,6 +120,9 @@ function FilmCard({ film, index }: { film: FilmEvent; index: number }) {
         )}
 
         {/* Showtimes */}
+        <h3 className="font-heading text-lg md:text-xl text-foreground tracking-wide mb-3">
+          SHOWTIMES
+        </h3>
         <div className="flex flex-wrap gap-2">
           {film.shows.map((s) => (
             <a
