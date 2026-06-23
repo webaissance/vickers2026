@@ -50,7 +50,7 @@ const NowPlaying = () => {
         )}
 
         {/* Films */}
-        <div className="space-y-16 md:space-y-20">
+        <div className="space-y-16 md:space-y-20 max-w-5xl mx-auto">
           {filmsWithCurrentWeekShows.map((film, i) => (
             <FilmCard key={film.eventId} film={film} index={i} />
           ))}
