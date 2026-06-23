@@ -94,7 +94,7 @@ const Header = () => {
 
           {/* Centered Logo */}
           <a href="/" className="flex items-center justify-center px-4">
-            <img src={vickersLogo} alt="Vickers Theatre" className="h-16 xl:h-20 w-auto max-w-[420px]" />
+            <img src={vickersLogo} alt="Vickers Theatre" className="h-20 xl:h-24 w-auto max-w-[520px]" />
           </a>
 
           {/* Right nav */}
@@ -118,7 +118,7 @@ const Header = () => {
         {/* Mobile: logo + hamburger */}
         <div className="flex lg:hidden items-center justify-between">
           <a href="/" className="flex items-center">
-            <img src={vickersLogo} alt="Vickers Theatre" className="h-10 w-auto max-w-[220px]" />
+            <img src={vickersLogo} alt="Vickers Theatre" className="h-16 sm:h-20 w-auto max-w-[360px]" />
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
