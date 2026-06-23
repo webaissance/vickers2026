@@ -1,71 +1,15 @@
-# Film Detail Pages + Visit Page
+## Goal
+Make the marquee logo more prominent in the header — slightly larger on desktop, significantly larger on mobile and tablet.
 
-## 1. Film detail pages — `/film/:slug`
+## Changes (src/components/Header.tsx)
 
-Replace the current behavior where clicking a poster opens an external Easy-Ware page. Posters on the homepage (Now Playing + Coming Soon) will link to an internal route. The external "Buy Tickets" links per showtime stay external — those go to the ticketing system.
+**Desktop logo** (currently `h-16 xl:h-20 max-w-[420px]`)
+- Bump to `h-20 xl:h-24` with `max-w-[520px]` so it reads larger without crowding the nav columns.
 
-### Route + data
-- New route `/film/:slug` registered in `src/App.tsx`.
-- Reuse `useFilmFeed()` (already cached by React Query) and find the matching film by slugified `title`. No new network calls.
-- Slug helper in `src/lib/filmFeed.ts`: lowercase, strip punctuation, dashes for spaces. Used both when generating links and when resolving the param.
-- If feed is loading → show a centered "Loading…" state. If film not found → friendly "We can't find that film" message with a link back to Now Playing.
+**Mobile/tablet logo** (currently `h-10 max-w-[220px]`)
+- Increase to `h-16 sm:h-20 max-w-[360px]` so the marquee fills much more of the bar.
+- Slightly tighten container vertical padding on small screens so the taller logo doesn't make the header feel oversized.
 
-### Page layout (Art Deco, black/gold, Playfair + Raleway)
-Matches the existing homepage feel:
-
-```text
-Header
-─────────────────────────────────────────────
-  [ Poster ]   Title (Playfair, gold gradient)
-               Series tag (Throwback Thursday / Special Event) if any
-               Runtime · Rating · Year · Country · Language
-               Director · Writer · Cast
-               ─── divider ───
-               Synopsis paragraph(s)
-               [ Watch Trailer → ]   (only if trailer exists)
-
-               Showtimes
-               [ Fri May 28 · 7:00 PM ]  [ … ]   ← buttons linking to ticketing
-               (sold-out shows render disabled with "Sold Out" label)
-
-               [ ← Back to Now Playing ]
-Footer
-```
-
-- Poster column: ~360px on desktop, full-width on mobile, with the same gold glow used on the homepage card.
-- Showtime buttons reuse the existing outlined-gold pill style.
-- SEO: per-page `<title>` = `"{Film Title} — Vickers Theatre"`, meta description from `synopsis`, Open Graph image = poster.
-
-### Updates to existing components
-- `NowPlaying.tsx` — poster link and title link change from `film.movieLink` (external) to internal `/film/{slug}`. Individual showtime buttons keep their external `screeningLink`. Trailer link stays external.
-- `ComingSoon.tsx` — poster link changes to internal `/film/{slug}`.
-
-## 2. Visit page — `/visit`
-
-New page styled to match About/Rentals. Sections:
-
-1. **Hero heading** — "Visit the Vickers" with gold gradient + filigree divider.
-2. **Location & Contact** — address (6 N. Elm St, Three Oaks, MI 49128), phone, email, embedded Google Map iframe.
-3. **Hours** — note that hours follow the showtimes; link to Now Playing.
-4. **Tickets & Pricing** — general admission, matinee, member pricing (placeholders for you to confirm).
-5. **Concessions** — real-butter popcorn, vintage candy, beer & wine (2019 liquor license).
-6. **Accessibility** — handicapped accessible; 126-seat capacity including café and balcony.
-7. **Parking** — street parking + adjacent lot.
-8. **Group visits & private events** — short blurb with a link to `/rentals`.
-
-Add **Visit** to the Header nav and Footer nav (between Now Playing/Coming Soon and About).
-
-## Technical details
-
-- Files created:
-  - `src/pages/FilmDetail.tsx`
-  - `src/pages/Visit.tsx`
-- Files edited:
-  - `src/App.tsx` — register `/film/:slug` and `/visit` routes (above the catch-all).
-  - `src/lib/filmFeed.ts` — add `slugify(title)` and `findFilmBySlug(films, slug)` helpers.
-  - `src/components/NowPlaying.tsx` — internal poster/title links.
-  - `src/components/ComingSoon.tsx` — internal poster links.
-  - `src/components/Header.tsx` — add Visit nav item.
-  - `src/components/Footer.tsx` — add Visit nav item.
-- No backend changes. No new dependencies.
-- All copy on the Visit page will be drafted from publicly available info on vickerstheatre.com; placeholders flagged where exact values (current ticket prices, exact phone) should be confirmed.
+## Notes
+- Nav uses a 3-column grid (`1fr auto 1fr`) on desktop, so a wider center column stays centered and the side nav links keep their spacing.
+- Mobile shows only the logo + hamburger, so a much bigger logo fits comfortably.
